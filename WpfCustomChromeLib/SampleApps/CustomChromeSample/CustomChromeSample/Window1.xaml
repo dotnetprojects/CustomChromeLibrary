@@ -1,0 +1,44 @@
+﻿<Window x:Class="CustomChromeSample.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:CustomChromeSample"
+        Title="Window 1 - Standard Chrome" 
+        Height="350" Width="525">
+
+	<Window.Resources>
+		<ResourceDictionary>
+			<local:CaptionButtonRectToMarginConverter x:Key="CaptionButtonMarginConverter"/>
+
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Resources\GlassButton.xaml"/>
+				<ResourceDictionary Source="Resources\GlassIcon.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!--provide the background for the entire form.  In practice, this appears as the window's resize border, because the title and window content obscure the rest-->
+		<Border Grid.RowSpan="2">
+			<Border.Background>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#99bbbbff" Offset="0" />
+					<GradientStop Color="#ff7777bb" Offset="1" />
+				</LinearGradientBrush>
+			</Border.Background>
+		</Border>
+
+		<Grid Grid.Row="1">
+			<TextBlock Grid.Row="1" Margin="10" FontFamily="Verdana" FontSize="14">
+				Standard window chrome.<LineBreak/>
+			</TextBlock>
+		</Grid>
+	</Grid>
+</Window>

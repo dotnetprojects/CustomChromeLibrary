@@ -1,0 +1,89 @@
+﻿<ccl:CustomChromeWindow x:Class="CustomChromeSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shell="http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell"
+        xmlns:ccl="clr-namespace:CustomChromeLibrary;assembly=CustomChromeLibrary"
+		xmlns:local="clr-namespace:CustomChromeSample"
+        Title="Custom Chrome Sample" 
+        Height="350" Width="525">
+
+	<shell:WindowChrome.WindowChrome>
+		<shell:WindowChrome
+            ResizeBorderThickness="6"
+            CaptionHeight="43"
+            CornerRadius="25,25,10,10"
+            GlassFrameThickness="0">
+		</shell:WindowChrome>
+	</shell:WindowChrome.WindowChrome>
+
+	<Window.Resources>
+		<ResourceDictionary>
+			<local:CaptionButtonRectToMarginConverter x:Key="CaptionButtonMarginConverter"/>
+
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Resources\GlassButton.xaml"/>
+				<ResourceDictionary Source="Resources\GlassIcon.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!--provide the background for the entire form.  In practice, this appears as the window's resize border, because the title and window content obscure the rest-->
+		<Border CornerRadius="10,10,5,5" Grid.RowSpan="2" BorderThickness="3" BorderBrush="LightSteelBlue">
+			<Border.Background>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#99bbbbff" Offset="0" />
+					<GradientStop Color="#ff7777bb" Offset="1" />
+				</LinearGradientBrush>
+			</Border.Background>
+		</Border>
+
+		<!--title bar-->
+		<Border CornerRadius="10,10,0,0" BorderThickness="3,3,3,1" BorderBrush="LightSteelBlue" Margin="{Binding Path=CaptionButtonMargin}">
+			<Border.Background>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#ffbbbbff" Offset="0" />
+					<GradientStop Color="#ff7777bb" Offset="1" />
+				</LinearGradientBrush>
+			</Border.Background>
+
+			<!--<Border.BitmapEffect>
+                        <DropShadowBitmapEffect Direction="305" Opacity="1" ShadowDepth="5" Color="White" />
+                    </Border.BitmapEffect>-->
+
+			<!--Window Icon and Title-->
+			<StackPanel Orientation="Horizontal" Margin="0" VerticalAlignment="Top">
+				<ccl:WindowIcon Width="35" Height="35" Background="#ff0000bb" Margin="7,3,5,5" Style="{StaticResource GlassIcon}" />
+				<TextBlock Text="Custom Chrome Sample" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="#FF000044" VerticalAlignment="Center"/>
+			</StackPanel>
+		</Border>
+
+		<!--min/max/close buttons-->
+		<ccl:CaptionButtons/>
+		<!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="{Binding Path=CaptionButtonMargin}">
+			<ccl:MinimizeButton Background="Transparent"/>
+			<ccl:MaximizeButton Background="Transparent"/>
+			<ccl:CloseButton Background="Transparent"/>
+		</StackPanel>-->
+
+		<!--Content-->
+		<Grid Grid.Row="1">
+			<StackPanel>
+				<TextBlock/>
+				<Button Width="175" Margin="5" Padding="5" HorizontalContentAlignment="Left" Click="StandardChromeButton_Click">Window 1 - Standard Chrome</Button>
+				<Button Width="175" Margin="5" Padding="5" HorizontalContentAlignment="Left" Click="NoChromeButton_Click">Window 2 - No Chrome</Button>
+				<Button Width="175" Margin="5" Padding="5" HorizontalContentAlignment="Left" Click="NoChromeNoResizeButton_Click">Window 3 - No Resize</Button>
+				<Button Width="175" Margin="5" Padding="5" HorizontalContentAlignment="Left" Click="CustomChromeButton_Click">Window 4 - Custom Chrome</Button>
+				<Button Width="175" Margin="5" Padding="5" HorizontalContentAlignment="Left" Click="CompleteCustomChromeButton_Click">Window 5 - Caption Buttons</Button>
+			</StackPanel>
+		</Grid>
+	</Grid>
+</ccl:CustomChromeWindow>
