@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>DotNetProjects.CustomChromeLibrary</id>
+    <version>$version$</version>
+    <authors>DotNetProjects</authors>
+    <owners>DotNetProjects</owners>
+    <licenseUrl>Ms-Pl</licenseUrl>
+    <projectUrl>https://github.com/dotnetprojects/CustomChromeLibrary</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>CustomChromeLibrary</description>
+    <copyright>Copyright 2015</copyright>
+  </metadata>
+  <files>
+    <file src="..\WpfCustomChromeLib\Libraries\CustomChromeLibrary\bin\Debug\CustomChromeLibrary.dll" target="lib\net45" />
+    <file src="..\WpfCustomChromeLib\Libraries\CustomChromeLibrary\bin\Debug\CustomChromeLibrary.pdb" target="lib\net45" />
+  </files>
+</package>
