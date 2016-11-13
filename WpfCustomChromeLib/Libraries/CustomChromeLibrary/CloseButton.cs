@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows;
-using Microsoft.Windows.Shell;
-
 namespace CustomChromeLibrary
 {
 	public class CloseButton : CaptionButton

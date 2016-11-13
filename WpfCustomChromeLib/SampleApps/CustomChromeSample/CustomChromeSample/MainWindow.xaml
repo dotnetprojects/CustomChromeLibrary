@@ -1,20 +1,19 @@
 ﻿<ccl:CustomChromeWindow x:Class="CustomChromeSample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:shell="http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell"
         xmlns:ccl="clr-namespace:CustomChromeLibrary;assembly=CustomChromeLibrary"
 		xmlns:local="clr-namespace:CustomChromeSample"
         Title="Custom Chrome Sample" 
         Height="350" Width="525">
 
-	<shell:WindowChrome.WindowChrome>
-		<shell:WindowChrome
+	<WindowChrome.WindowChrome>
+		<WindowChrome
             ResizeBorderThickness="6"
             CaptionHeight="43"
             CornerRadius="25,25,10,10"
             GlassFrameThickness="0">
-		</shell:WindowChrome>
-	</shell:WindowChrome.WindowChrome>
+		</WindowChrome>
+	</WindowChrome.WindowChrome>
 
 	<Window.Resources>
 		<ResourceDictionary>

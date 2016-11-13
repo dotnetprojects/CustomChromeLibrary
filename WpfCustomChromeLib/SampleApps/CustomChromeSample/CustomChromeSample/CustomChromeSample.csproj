@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CustomChromeSample</RootNamespace>
     <AssemblyName>CustomChromeSample</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -43,6 +44,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -148,15 +150,10 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Libraries\CustomChromeLibrary\CustomChromeLibrary.csproj">
-      <Project>{25990F61-A27B-4EDF-A402-B31BF952153F}</Project>
+      <Project>{25990f61-a27b-4edf-a402-b31bf952153f}</Project>
       <Name>CustomChromeLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\ThirdParty\WPF Shell Integration Library v2\Microsoft.Windows.Shell\Microsoft.Windows.Shell.csproj">
-      <Project>{55D5297C-F1DF-4B76-A3C1-D82CC294EEBB}</Project>
-      <Name>Microsoft.Windows.Shell</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows;
-using Microsoft.Windows.Shell;
+﻿using System.Windows;
 
 namespace CustomChromeLibrary
 {

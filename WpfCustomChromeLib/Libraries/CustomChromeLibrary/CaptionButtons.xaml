@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:ccl="clr-namespace:CustomChromeLibrary"
-			 xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Microsoft.Windows.Shell"
-             mc:Ignorable="d" 
+			 mc:Ignorable="d" 
              >
 	<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="{Binding Path=CaptionButtonMargin}">
 		<ccl:MinimizeButton/>

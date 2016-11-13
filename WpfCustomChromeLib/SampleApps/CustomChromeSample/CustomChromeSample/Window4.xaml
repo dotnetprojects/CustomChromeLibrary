@@ -7,14 +7,14 @@
         Title="Custom Chrome Sample" 
         Height="350" Width="525">
 
-	<shell:WindowChrome.WindowChrome>
-		<shell:WindowChrome
+	<WindowChrome.WindowChrome>
+		<WindowChrome
             ResizeBorderThickness="6"
             CaptionHeight="43"
             CornerRadius="25,25,10,10"
             GlassFrameThickness="0">
-		</shell:WindowChrome>
-	</shell:WindowChrome.WindowChrome>
+		</WindowChrome>
+	</WindowChrome.WindowChrome>
 
 	<Window.Resources>
 		<ResourceDictionary>
@@ -59,7 +59,7 @@
 
 			<!--Window Icon and Title-->
 			<StackPanel Orientation="Horizontal" Margin="0" VerticalAlignment="Top">
-				<ContentControl Width="35" Height="35" Background="#ff0000bb" Margin="7,3,5,5" Style="{StaticResource GlassIcon}" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+				<ContentControl Width="35" Height="35" Background="#ff0000bb" Margin="7,3,5,5" Style="{StaticResource GlassIcon}" WindowChrome.IsHitTestVisibleInChrome="True" />
 				<TextBlock Text="Window 4 - Custom Chrome" FontFamily="Calibri" FontWeight="Bold" FontSize="26" Foreground="#FF000044" VerticalAlignment="Center"/>
 			</StackPanel>
 		</Border>
